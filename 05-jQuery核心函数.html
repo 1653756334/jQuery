@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.10.2/jquery.js"></script>
+    <script>
+        //$();  代表调用jQuery的核心函
+
+
+
+        $(function () {
+            alert("hello");
+            //1、接收一个函数作为入口函数
+
+            //2.1 接收一个字符串选择器
+            //返回jQuery对象，对象中保存找到的dom元素
+            var $box1 = $(".box1");
+            var $box2 = $("#box2");
+            console.log($box1);
+            console.log($box2);
+
+            //2.2 接收一个代码片段
+            //返回jQuery对象，对象中保存创建的dom元素
+            var $p = $("<p>我是段落</p>");
+            console.log($p);
+            $box1.append($p);
+
+
+            //3、接受一个dom元素
+            //会被包装成一个jQuery对象
+            var span = document.querySelector("span");
+            console.log(span);
+
+            var $span = $(span);
+            console.log($span);
+        });
+    </script>
+</head>
+<div class="box1"></div>
+<div id="box2"></div>
+<span>我是span</span>
+
+<body>
+
+</body>
+
+</html>

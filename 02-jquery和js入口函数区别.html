@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.10.2/jquery.js"></script>
+    <script>
+        /* // 1、原生js固定写法
+        window.onload = function (ev) {
+            //通过原生的js入口函数可以拿到dom元素
+            var img = document.querySelector('img');
+            console.log(img);
+
+            //通过原生js函数可以拿到dom元素宽高
+            var width = window.getComputedStyle(img).width;
+            console.log("onload", width);
+        } */
+
+
+
+        // 2、原生jQuery固定写法
+        /* $(document).ready(function () {
+            //通过原jQuery入口函数可以拿到dom元素
+            var $img = $("img");
+            console.log($img);
+
+            //通过jQuery函数不可以拿到dom元素宽高
+            var $width = $img.width();
+            console.log("ready", $width);
+        }) */
+
+
+        /*  window.onload = function (ev) {
+             alert("hello 1");
+         }
+         window.onload = function (ev) {
+             alert("hello 2");
+         } */
+
+        $(document).ready(function () {
+            alert("hello 3");
+        })
+        $(document).ready(function () {
+            alert("hello 4");
+        })
+
+        /* 1、原生js和jQuery入口加载方式不同
+            原生js会等到dom元素加载完毕，并且图片也加载完毕才会执行
+            jQuery会等到dom加载完毕，但不会等到图片加载完毕
+
+           2、原生的js如果编写了多个函数，后面编写的会覆盖前面编写的
+            jQuery中编写多个入口函数，后面的不会覆盖前面的
+        */
+    </script>
+</head>
+
+<body>
+    <img src="https://img.alicdn.com/simba/img/TB1Fx2sQ8r0gK0jSZFnSuvRRXXa.jpg" alt="">
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对联广告</title>
+    <style>
+        .left {
+            float: left;
+            position: fixed;
+            left: 0;
+            top: 300px;
+            display: none;
+        }
+        .right {
+            float: right;
+            position: fixed;
+            right: 0;
+            top: 300px;
+            display: none;
+        }
+    </style>
+    <script src="jquery-1.10.2/jquery.js"></script>
+    <script>
+        $(() => {
+            // 监听网页滚动
+             $(window).scroll(()=>{
+                 // console.log("网页滚动了");
+                 // console.log($("html,body").scrollTop());
+
+                 //获取网页偏移位
+                 let offset = $('html, body').scrollTop();
+
+                 if(offset >= 800){
+                 //    显示广告
+                     $('img').show(1000);
+                 } else {
+                     $('img').hide(1000);
+                 }
+
+             })
+        })
+    </script>
+</head>
+<body>
+    <img src="images/1.webp" alt="" class="left">
+    <img src="images/1.webp" alt="" class="right">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+</body>
+</html>

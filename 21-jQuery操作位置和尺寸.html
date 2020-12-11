@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 50px solid #000;
+            margin-left: 50px;
+        }
+
+        .son {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+    <script src="jquery-1.10.2/jquery.js"></script>
+    <script>
+        $(() => {
+            var btns = document.querySelectorAll('button');
+            /* btns[0].onclick = () => {
+                console.log($('.father').width()); //宽度多少就是多少  不包含边框之类的
+            }
+            btns[1].onclick = () => {
+                $('.father').width('500px'); //设置宽度
+            } */
+
+            // offset([coordinates])
+            //作用：获取、设置元素距离窗口的偏移位
+            console.log($('.son').offset().left);  //150
+            //设置距离窗口的偏移距离
+            btns[0].onclick = () => {
+                $('.son').offset({
+                    left: 10
+                })
+            }
+
+            // position()
+            //作用：获取元素距离定位元素的偏移位
+            console.log($('.son').position().left);
+
+            btns[1].onclick = () => {
+                /* $('.son').position({        //无效
+                                               //注意：position方法只能获取，不能设置
+                    left: 10
+                }); */
+                $('.son').css({
+                    left: '10px'
+                })
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <button>获取</button>
+    <button>设置</button>
+</body>
+
+</html>

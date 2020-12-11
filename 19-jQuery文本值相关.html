@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="jquery-1.10.2/jquery.js"></script>
+    <script>
+        $(function () {
+            /* 
+                1.html([val|fn])
+                    和原生innerHtml一模一样
+                2.text([val|fn])
+                    和原生innerText一模一样
+                3.val([val|fn|arr])
+                    和value属性差不多
+             */
+
+            var btns = document.querySelectorAll('button');
+            btns[0].onclick = () => {
+                $('div').html("<p>我是段落<span>我是span</span></p>"); //添加HTML标签
+            }
+            btns[1].onclick = () => {
+                console.log($('div').html()); //什么参数都不传就是获取
+            }
+            btns[2].onclick = () => {
+                $('div').text("<p>我是段落<span>我是span</span></p>"); //添加文本
+            }
+            btns[3].onclick = () => {
+                console.log($('div').text());  //获取文本
+            }
+            btns[4].onclick = () => {
+                $('input').val("请输入内容");  //添加value值
+            }
+            btns[5].onclick = () => {
+                console.log($('input').val()); //获取value值
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <button>设置html</button>
+    <button>获取html</button>
+    <button>设置text</button>
+    <button>获取text</button>
+    <button>设置value</button>
+    <button>获取value</button>
+    <div></div>
+    <input type="text" name="" id="">
+</body>
+
+</html>

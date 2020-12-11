@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.10.2/jquery.js"></script>
+    <script>
+        $(() => {
+            //逐个设置
+            $('div').css("width", "100px");
+            $('div').css("height", "100px");
+            $('div').css("background", "blue");
+
+            //链式设置
+            //链式操作如果大于三步，建议分开
+            $('div').css("width", "100px").css("height", "100px").css("background", "red");
+
+            //批量设置
+            $('div').css({
+                width: '200px',
+                height: '200px',
+                background: 'skyblue'
+            });
+
+            //获取css样式值
+            console.log($('div').css("background"));
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.10.2/jquery.js"></script>
+    <script>
+        $(function () {
+            /* 
+            关于属性
+            1.prop 获取 添加 属性
+                特点和attr一致
+            2.removeProp
+                特点和removeAttr一样
+             */
+            /* $('span').eq(0).prop("demo", "it666");
+            $('span').eq(1).prop("demo", "lsp");
+            console.log($('span').prop("demo")); //只获取第一个
+
+            $('span').removeProp("demo"); */
+
+            // prop不仅可以操作属性，还可以操作属性节点
+            /* console.log($('span').prop("class"));
+            $('span').prop('class', 'box'); */
+
+            console.log($('input').prop("checked")); //true /false
+            console.log($('input').attr("checked")); //checked /undefined
+        })
+    </script>
+</head>
+
+<body>
+    <span class="span1" name="sp2"></span>
+    <span class="span2" name="sp2"></span>
+    <input type="checkbox" name="" id="" checked>
+</body>
+
+</html>

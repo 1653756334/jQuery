@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="jquery-1.10.2/jquery.js"></script>
+    <script>
+        var str = "    hello    ";
+        console.log("----" + str + "----");
+
+        var res = $.trim(str);//去除字符串中两端的空格并  返回清除后的字符串
+
+        console.log(res);
+
+        var arr = [1, 3, 5, 7, 9];
+        var arrlike = { 0: 2, 1: 4, 2: 6, 3: 8, 4: 10, length: 5 };
+        var obj = { name: "ljl", age: 18 };
+        var fun = function () { };
+        var w = window;
+
+        console.log($.isWindow(arr)); //$.window() 判断是不是window对象 返回值true，false
+        console.log($.isWindow(arrlike));
+        console.log($.isWindow(obj));
+        console.log($.isWindow(fun));
+        console.log($.isWindow(w));
+
+        console.log('\n');
+
+        console.log($.isArray(arr)); //判断是否为数组 注意为真数组才返回true
+        console.log($.isArray(arrlike));
+
+        console.log('\n');
+
+        console.log($.isFunction(fun)); //判断是否为函数
+        console.log($.isFunction($)); //jQuery本质是一个函数 一个立即执行函数
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

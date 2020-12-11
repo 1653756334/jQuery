@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>36-jQuery的自定义效果</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            background-color: #7175d4;
+        }
+        .two {
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery-1.10.2/jquery.js"></script>
+    <script>
+        $(() => {
+             //这里写代码
+
+            $("button").eq(0).click(function () {
+                $(".one").animate({
+                    marginLeft:500
+                }, 2000, function () {
+                    console.log("改变完毕");
+                })
+                $(".two").animate({
+                    marginLeft:500
+                }, 2000, "linear",function () {
+                    console.log("改变完毕");
+                })
+
+            })
+            $("button").eq(1).click(function () {
+                $('.one').animate({
+                    width: "+=100"
+                },1000,function () {
+
+                })
+            })
+            $("button").eq(2).click(function () {
+                $('.one').animate({
+                    // width: "hide"
+                    width:"toggle"
+                },1000,function () {
+
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>操作属性</button>
+    <button>累加属性</button>
+    <button>关键字</button>
+    <div class="one"></div>
+    <div class="two"></div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.10.2/jquery.js"></script>
+
+    <script>
+        var arr = [1, 3, 5, 7, 9];
+
+        var obj = { 0: 2, 1: 4, 2: 6, 3: 8, 4: 10, length: 5 };
+
+        //1、利用原生的map遍历
+
+        /* 第一个参数：当前遍历到的元素
+        第二个参数：当前元素的索引
+        第三个参数：当前被便利的数组
+        
+        和原生的foreach一样不能遍历伪数组*/
+        /* arr.map(function (value, index, array) {
+            console.log(index, value, array);
+        }) */
+
+
+        /* 第一个参数：要遍历的数组
+        第二个参数：每遍历一个函数之后执行的回调函数 
+        
+        回调函数的参数:
+        第一个：遍历到的元素
+        第二个：遍历到的索引
+        
+        注意点：map静态方法也可以遍历伪数组
+        
+        和each静态方法的区别：
+            each默认返回值：遍历谁就返回谁
+            map默认返回值：一个空数组
+
+            each不支持在回调函数中对便利的函数进行处理
+            map可以在函数中设置返回值，并将返回值组成一个新的数组返回
+        */
+        /* $.map(arr, function (value, index) {
+            console.log(index, value);
+        }) */
+        var res = $.map(obj, function (value, index) {
+            console.log(index, value);
+            return value + index;
+        })
+
+        console.log(res);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

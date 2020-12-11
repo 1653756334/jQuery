@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.10.2/jquery.js"></script>
+
+    <!-- 添加后jQuery会被覆盖 -->
+    <!-- 后面的会覆盖前面的 -->
+    <script src="test.js"></script>
+    <script>
+
+        //1、释放$的使用权
+        //注意：释放操作必须在编写其他的jQuery代码之前
+        //      释放之后不能再使用$
+        //jQuery.noConflict();//代表释放$的使用权， 以后都使用jQuery
+
+        //2、自定义访问符号
+        var nj = jQuery.noConflict();
+        nj(function () {
+            alert("hello");
+        })
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.10.2/jquery.js"></script>
+
+    <script>
+
+        $.holdReady(true);
+
+        //$.holdReady(true); 暂停ready执行
+
+        $(document).ready(function () {
+            alert("world");
+        })
+    </script>
+</head>
+
+<body>
+    <button>恢复ready方法</button>
+    <script>
+        var btn = document.querySelector('button');
+        btn.onclick = () => {
+            alert("hello");
+            $.holdReady(false);
+        }
+    </script>
+</body>
+
+</html>

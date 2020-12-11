@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.10.2/jquery.js"></script>
+    <script>
+        $(() => {
+            /* 
+                jQuery中有两种事件绑定方式
+
+                1.eventName(fn);  //编码效率略高  部分时间jQuery没有实现 不能添加
+                2.on(eventName,fn);  // 所有的事件都可以添加
+
+                注意：
+                可以提案及多个相同或者不同内性的事件  不会覆盖  两种方式都不会
+             */
+            $('button').click(() => {
+                alert("hello");
+            })
+            $('button').click(() => {
+                alert("hello 123"); //添加的两个事件都会发生
+            })
+            $('button').mouseleave(() => {
+                alert('ooooo'); //可以同时添加两个不同类型的事件  不会覆盖
+            })
+            /* $('button').on("click", function () {
+                alert("hello ll")
+            }) */
+        })
+    </script>
+</head>
+
+<body>
+    <button>我是一个按钮</button>
+</body>
+
+</html>

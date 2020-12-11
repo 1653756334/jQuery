@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.10.2/jquery.js"></script>
+    <script>
+        $(() => {
+            var test1 = function () {
+                alert("hello");
+            }
+            var test2 = () => {
+                alert("hello 123");
+            }
+            $('button').click(test1);
+            $('button').click(test2);
+            $('button').mouseleave(() => {
+                alert('ooooo');
+            })
+            //$('button').off();  // ()中不传参数  移除button中全部事件
+            //$('button').off('click'); //()传递一个事件 所有该类型事件事件
+            $('button').off('click', test1); //()传递两个参数  会移除指定类型的指定事件
+        })
+    </script>
+</head>
+
+<body>
+    <button>我是一个按钮</button>
+</body>
+
+</html>

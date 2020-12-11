@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+    <script src="jquery-1.10.2/jquery.js"></script>
+    <script>
+        $(() => {
+
+            $('.father').click(() => {
+                alert('father');
+            });
+
+            $('.son').click((event) => {
+                alert('son');
+            })
+
+            //$('.father').trigger("click"); //自动触发事件  trigger("事件")
+            //$('.father').triggerHandler("click");  //用法同上
+
+            // /$('.son').trigger('click'); //会触发事件冒泡  同时触发父亲和儿子
+
+            //$('.son').triggerHandler('click');  //不会差法事件冒泡  指挥处罚儿子的事件
+
+            $('input[type="submit"]').click(function () {
+                alert("submit");
+            })
+            //$('input[type="submit"]').trigger('click');
+            //$('input[type="submit"]').triggerHandler('click');
+
+            /* 
+                区别：
+                    1.trigger  会触发事件冒泡  同时触发父亲和儿子
+                      triggerHandler  不会差法事件冒泡  只会触发儿子的事件
+                    2.trigger  如果利用trigger自动触发事件  会触发默认行为
+                      triggerHandler  如果利用triggerHandler自动触发事件  不会触发默认行为
+            
+            
+             */
+
+            $('a').click(() => {
+                alert('a');
+            })
+            //$('a').triggerHandler('click');
+            $('span').trigger('click');  //将span包装在a中  才会在自动触发时触发a的默认行为  （事件冒泡）
+        })
+    </script>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <a href="http://www.baidu.com"><span>注册</span></a>
+    <form action="http://www.taobao.com">
+        <input type="text">
+        <input type="submit" value="提交">
+    </form>
+
+</body>
+
+</html>

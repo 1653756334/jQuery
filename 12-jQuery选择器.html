@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 100px;
+            height: 50px;
+            background-color: #888;
+            margin-top: 5px;
+        }
+    </style>
+    <script src="jquery-1.10.2/jquery.js"></script>
+
+    <script>
+        $(function () {
+            // :empty
+            /*  var $div = $("div:empty");//找到内容为空的 既没有文本 也没有子元素
+             console.log($div); */
+
+            // :parent
+            /* var $div = $("div:parent"); //找到有文本内容或有子元素的
+            console.log($div); */
+
+            // contains
+            /* var $div = $("div:contains('我是div')"); // 找到包含指定文本内容的元素
+            console.log($div); */
+
+            //has
+            var $div = $("div:has('span')"); //找到包含有指定子元素的元素
+            console.log($div);
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <div>我是div</div>
+    <div>他们我是div123</div>
+    <div><span></span></div>
+    <div>
+        <p></p>
+    </div>
+</body>
+
+</html>

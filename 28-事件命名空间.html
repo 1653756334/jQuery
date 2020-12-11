@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+    <script src="jquery-1.10.2/jquery.js"></script>
+    <script>
+        $(() => {
+
+            //事件需要通过on绑定
+            $('.son').on("click.zs", () => {
+                alert('son');
+            })
+            $('.son').on("click.ls", () => {
+                alert('click1');
+            })
+            $('.son').trigger('click.zs');
+        })
+    </script>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <a href="http://www.baidu.com"><span>注册</span></a>
+    <form action="http://www.taobao.com">
+        <input type="text">
+        <input type="submit" value="提交">
+    </form>
+</body>
+
+</html>
