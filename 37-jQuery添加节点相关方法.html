@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>37-jQuery添加节点相关方法</title>
+    <script src="jquery-2.1.4/jquery.js"></script>
+    <script>
+        $(() => {
+             /*$('button').click(function () {
+                 //1、穿见一个节点
+                 var $li = $("<li>新增的li</li>");
+                 $('ul').append($li);       //吧新增的li放在指定元素内部的最后
+             })
+
+            */
+            /*$('button').click(function () {
+                //1、穿见一个节点
+                var $li = $("<li>新增的li</li>");
+                $('ul').prepend($li);       //吧新增的li放在指定元素内部的最前面
+            })*/
+
+            /*$('button').click(function () {
+                //1、穿见一个节点
+                var $li = $("<li>新增的li</li>");
+                $li.appendTo('ul');      //吧新增的li放在指定元素内部的最后
+            })*/
+            /*$('button').click(function () {
+                //1、穿见一个节点
+                var $li = $("<li>新增的li</li>");
+                $li.prependTo('ul');      //吧新增的li放在指定元素内部的最前面
+            })*/
+
+            /*$('button').click(function () {
+                //1、穿见一个节点
+                var $li = $("<li>新增的li</li>");
+                $('ul').after($li);     //添加到外部的最后
+            })*/
+            $('button').click(function () {
+                //1、穿见一个节点
+                var $li = $("<li>新增的li</li>");
+                $('ul').before($li);     //添加到外部的前面
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <button>添加节点</button>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+    </ul>
+    <div>我是div</div>
+</body>
+</html>
